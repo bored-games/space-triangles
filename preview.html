@@ -1,0 +1,131 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Homeworlds</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- <script src="assets/js/main.js"></script> -->
+  <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css2?family=Solway:wght@300&display=swap" rel="stylesheet"> 
+
+</head>
+<body>
+  <!-- <main id="elm-node"></main> -->
+
+  <div class="main">
+    <div class="v-left">
+        <div class="h-main">
+            <div class="space-opponent-homeworld">
+                <div class="homeworld__actions"></div>
+                <div class="homeworld__status">
+                    <div class="planet">
+                        <div class="binary red-yellow">
+
+                        </div>
+                        <div class="ship-row">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="homeworld__stats">
+                    OPPONENT'S HOMEWORLD
+                    <em>Last turn:
+                        <ul>
+                            <li>Sacrificed <span style="color: #fdff79"><abbr title="Medium yellow">M</abbr></span> ship</li>
+                            <li>Moved <span style="color: #ff7979"><abbr title="Medium red">M</abbr></span> ship to <span style="color: #799dff"><abbr title="Small blue">S</abbr></span> planet</li>
+                            <li>Moved <span style="color: #ff7979"><abbr title="Large red">L</abbr></span> ship to <span style="color: #799dff"><abbr title="Small blue">S</abbr></span> planet</li>
+                        </ul>
+                    </em>
+                </div>
+            </div>
+            <div class="space-tier-1">
+                <div class="slot1 empty"></div>
+                <div class="slot1 empty"></div>
+                <div class="slot1 empty"></div>
+                <div class="slot1"></div>
+                <div class="slot1 empty"></div>
+                <div class="slot1 empty"></div>
+                <div class="slot1 empty"></div>
+                <div class="slot1"></div>
+                <div class="slot1 empty"></div>
+                <div class="slot1 empty"></div>
+                <div class="slot1 empty"></div>
+                <div class="slot1 empty"></div>
+            </div>
+            <div class="space-tier-2">
+                <div class="slot1 empty"></div>
+                <div class="slot1 empty"></div>
+                <div class="slot1 empty"></div>
+                <div class="slot1"></div>
+                <div class="slot1 empty"></div>
+                <div class="slot1 empty"></div>
+                <div class="slot1 empty"></div>
+                <div class="slot1 empty"></div>
+                <div class="slot1 empty"></div>
+                <div class="slot1 empty"></div>
+                <div class="slot1 empty"></div>
+                <div class="slot1 empty"></div>
+            </div>
+            <div class="space-tier-3">
+                <div class="slot1 empty"></div>
+                <div class="slot1 empty"></div>
+                <div class="slot1 empty"></div>
+                <div class="slot1 empty"></div>
+                <div class="slot1 empty"></div>
+                <div class="slot1 empty"></div>
+                <div class="slot1">expand box demo</div>
+                <div class="slot1 empty"></div>
+                <div class="slot1 empty"></div>
+                <div class="slot1 empty"></div>
+                <div class="slot1 empty"></div>
+                <div class="slot1 empty"></div>
+            </div>
+            <div class="space-player-homeworld">
+                <div class="homeworld__actions"></div>
+                <div class="homeworld__status">
+                    <div class="planet">
+                        <div class="ship-row">
+                            <div class="ship large green"><div class="inner"></div></div>
+                            <div class="ship medium yellow"><div class="inner"></div></div>
+                        </div>
+                        <div class="binary green-blue">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="homeworld__stats">YOUR HOMEWORLD<em>Current turn</em></div>
+            </div>
+        </div>
+    </div>
+    <div class="v-right">
+        <div class="bank">
+            <div class="ship yellow small"><div class="inner"></div><div class="count">3</div></div>
+            <div class="ship red small"><div class="inner"></div><div class="count">3</div></div>
+            <div class="ship green small alert-zero-remaining"><div class="inner"></div><div class="count">0</div></div>
+            <div class="ship blue small"><div class="inner"></div><div class="count">3</div></div>
+            <div class="ship yellow medium"><div class="inner"></div><div class="count">3</div></div>
+            <div class="ship red medium"><div class="inner"></div><div class="count">3</div></div>
+            <div class="ship green medium"><div class="inner"></div><div class="count">3</div></div>
+            <div class="ship blue medium"><div class="inner"></div><div class="count">3</div></div>
+            <div class="ship yellow large"><div class="inner"></div><div class="count">3</div></div>
+            <div class="ship red large"><div class="inner"></div><div class="count">3</div></div>
+            <div class="ship green large"><div class="inner"></div><div class="count">4</div></div>
+            <div class="ship blue large alert-one-remaining"><div class="inner"></div><div class="count">1</div></div>
+        </div>
+        <div class="main-actions">
+            <div class="action yellow"><div class="action__symbol"></div><div class="action__title">Move</div></div>
+            <div class="action red"><div class="action__symbol"></div><div class="action__title">Attack</div></div>
+            <div class="action green"><div class="action__symbol"></div><div class="action__title">Construct</div></div>
+            <div class="action blue"><div class="action__symbol"></div><div class="action__title">Trade</div></div>
+            <div class="action grey sacrifice"><div class="action__symbol"></div><div class="action__title">Sacrifice</div></div>
+            <div class="action grey history"><div class="action__symbol"></div><div class="action__title">History</div></div>
+            <div class="action grey chat"><div class="action__symbol"></div><div class="action__title">Toggle chat</div></div>
+            <div class="action grey concede"><div class="action__symbol"></div><div class="action__title">Concede</div></div>
+        </div>
+    </div>
+    <div class="v-chat">
+        chat (to do)
+    </div>
+  </div>
+</body>
+</html>
