@@ -8,6 +8,7 @@ module Main exposing (..)
 
 import Browser
 import Html exposing (Html, button, div, text)
+import Html.Attributes exposing (style)
 import Html.Events exposing (onClick)
 
 
@@ -23,13 +24,49 @@ main =
 -- MODEL
 
 
+type alias Player =
+    { name : String
+    , isTurn : Bool
+    }
+
+
+type Size
+    = Small
+    | Medium
+    | Large
+
+
+type State
+    = Planet
+    | Ship
+    | InBank
+
+
+type alias Triangle =
+    { color : String, size : Size, state : State }
+
+
+type alias TriangleType =
+    { small : List Triangle
+    , medium : List Triangle
+    , large : List Triangle
+    }
+
+
+type alias Board =
+    { pieces : List TriangleType }
+
+
 type alias Model =
-    Int
+    { turn : Int
+    , player1 : Player
+    , player2 : Player
+    }
 
 
 init : Model
 init =
-    0
+    Model 1 (Player "person1" True) (Player "person2" False)
 
 
 
@@ -45,10 +82,14 @@ update : Msg -> Model -> Model
 update msg model =
     case msg of
         Increment ->
-            model + 1
+            { model
+                | turn = model.turn + 1
+                , player1 = updatePlayerTurn model.player1
+                , player2 = updatePlayerTurn model.player2
+            }
 
         Decrement ->
-            model - 1
+            { model | turn = model.turn - 1 }
 
 
 
@@ -57,8 +98,24 @@ update msg model =
 
 view : Model -> Html Msg
 view model =
-    div []
-        [ button [ onClick Decrement ] [ text "-" ]
-        , div [] [ text (String.fromInt model) ]
-        , button [ onClick Increment ] [ text "+" ]
+    div
+        [ style "background-color" "black"
+        , style "color" "white"
         ]
+        [ button [ onClick Increment ] [ text "Next turn" ]
+        , div [] [ text ("Current turn " ++ String.fromInt model.turn ++ " (" ++ whoseTurn model ++ ")") ]
+        ]
+
+
+whoseTurn : Model -> String
+whoseTurn model =
+    if model.player1.isTurn then
+        model.player1.name
+
+    else
+        model.player2.name
+
+
+updatePlayerTurn : Player -> Player
+updatePlayerTurn player =
+    { player | isTurn = not player.isTurn }
