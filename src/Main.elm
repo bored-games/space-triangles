@@ -8,7 +8,7 @@ module Main exposing (..)
 
 import Browser
 import Html exposing (Html, button, div, text)
-import Html.Attributes exposing (style)
+import Html.Attributes exposing (class, id, style, type_)
 import Html.Events exposing (onClick)
 
 
@@ -28,6 +28,13 @@ type alias Player =
     { name : String
     , isTurn : Bool
     }
+
+
+type Color
+    = Red
+    | Blue
+    | Green
+    | Yellow
 
 
 type Size
@@ -98,12 +105,10 @@ update msg model =
 
 view : Model -> Html Msg
 view model =
-    div
-        [ style "background-color" "black"
-        , style "color" "white"
-        ]
+    div [ class "main" ]
         [ button [ onClick Increment ] [ text "Next turn" ]
         , div [] [ text ("Current turn " ++ String.fromInt model.turn ++ " (" ++ whoseTurn model ++ ")") ]
+        , div [] [ button [ onClick Decrement ] [ text "Previous turn" ] ]
         ]
 
 
